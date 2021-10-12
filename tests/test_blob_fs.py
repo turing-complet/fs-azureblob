@@ -52,16 +52,16 @@ def new_file(bfs_rw, content):
 
 def test_listdir(bfs):
     for path in ("", ".", "/", "raw", "raw/test_usa_tamu", "raw/test"):
-        print(f"{path=}")
+        # print(f"{path=}")
         print(bfs.listdir(path))
 
 
 def test_getinfo(bfs):
     info = bfs.getinfo("version.json", namespaces=["details"])
-    print(f"{info.name=}")
-    print(f"{info.size=}")
-    print(f"{info.created=}")
-    print(f"{info.modified=}")
+    # print(f"{info.name=}")
+    # print(f"{info.size=}")
+    # print(f"{info.created=}")
+    # print(f"{info.modified=}")
     assert info.size > 0
 
 
