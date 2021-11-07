@@ -20,7 +20,8 @@ class BlobFile(io.RawIOBase):
 
     def flush(self) -> None:
         if self.writable():
-            self.writer.commit()
+            with blobfs_errors(self.client.blob_name):
+                self.writer.commit()
 
     def readable(self) -> bool:
         return self.mode.reading
